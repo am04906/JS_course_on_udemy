@@ -17,11 +17,9 @@
   width:40%;
   border: 1px solid black;
   background-color: white;
+  padding: 5px;
 }
 
-.modal-img {
-  margin: 5px;
-}
 .modal-btn {
   flex-grow: 0;
   align-self: flex-end;
