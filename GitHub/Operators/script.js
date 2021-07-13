@@ -1,51 +1,37 @@
-// Coding Challenge #3
-// Let's continue with our football betting app! This time, we have a map called
-// 'gameEvents' (see below) with a log of the events that happened during the
-// game. The values are the events themselves, and the keys are the minutes in which
-// each event happened (a football game has 90 minutes plus some extra time).
-// Your tasks:
-// 1. Create an array 'events' of the different game events that happened (no
-// duplicates)
-// 2. After the game has finished, is was found that the yellow card from minute 64
-// was unfair. So remove this event from the game events log.
-// 3. Compute and log the following string to the console: "An event happened, on
-// average, every 9 minutes" (keep in mind that a game has 90 minutes)
-// 4. Loop over 'gameEvents' and log each element to the console, marking
-// whether it's in the first half or second half (after 45 min) of the game, like this:
-// [FIRST HALF] 17: ⚽ GOAL
-//
-// GOOD LUCK 😀
+const airline = 'TAP Air  Portugal ';
+const plane = 'A320';
 
-const gameEvents = new Map([
-  [17, '⚽ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽ GOAL'],
-  [80, '⚽ GOAL'],
-  [92, '🔶 Yellow card'],
- ]);
+console.log(plane[2])
+console.log(airline.indexOf(' '));
+console.log(airline.lastIndexOf(' '));
 
- // 1.
- const eventArr = [...new Set(gameEvents.values())];
- console.log(eventArr);
+console.log(airline.slice(4,7));
 
- // 2.
- gameEvents.delete(64);
- console.log(gameEvents);
+console.log(airline.slice(airline.indexOf(' '), airline.lastIndexOf(' ')))
 
- // 3.
- time = [...gameEvents.keys()].pop();
- const avetime = Number(time / gameEvents.size);
-console.log(`An event happened, on average, every ${avetime} minutes`);
+console.log(airline.slice(airline.lastIndexOf(' '), -2))
 
-// 4.
-const period = new Map([[true, '[FIRST HALF]'],[false, '[SECOND HALF]']]);
-console.log(period);
+const checkMidldleSeat = function(seat) {
+  // B and E are seats
+  console.log(`Seat letter is ${seat.slice(-1)[0]}`);
+  console.log('BE'.indexOf(seat.slice(-1)[0]) !== -1);
+}
 
-for( const [key,val] of gameEvents.entries())
- console.log(`${period.get(key <= 45)}: ${key} : ${val}`);
+checkMidldleSeat('11B');
+checkMidldleSeat('9C');
+checkMidldleSeat('7E');
+
+console.log(airline.toLocaleUpperCase());
+
+const announcement = 'All passengers come to the boarding Door 23. Boarding door 23! 💩 🦋';
+console.log(announcement);
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replace(/[Dd]oor/g, 'gate'));
+
+console.log(airline.trim().replace(/  /g, ' ').split(' '));
+
+// split & join
+
+const [first, last] = 'Alexander Martynovich'.split(' ');
+const newName = ['Mr.', first, last.toUpperCase()].join('---');
+console.log(newName)
